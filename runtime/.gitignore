@@ -1,2 +1,8 @@
-/logs/
-/indexes/products/
+/logs
+/data
+/tempfiles
+/catalina
+/indexes
+/tmp
+/tempfiles
+/output

@@ -824,7 +824,7 @@ div.popup {
 
 .matrix .productsummary .smallimage {
 float:none;
-/* text-align:center; */
+text-align:center;
 }
 
 .matrix .productsummary .smallimage img {
@@ -1042,8 +1042,8 @@ width: 135px;
 }
 /*===================For ProductDetail page.===========================================*/
 #productdetail {
-/* width: 670px; */
-display: block;
+width: 670px;
+display: inline-block;
 }
 
 #productImageBox {

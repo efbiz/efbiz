@@ -93,7 +93,9 @@ public class CrossSubdomainSessionValve extends ValveBase {
 
         if (UtilValidate.isNotEmpty(cookieDomain)) {
             Cookie newCookie = new Cookie(cookie.getName(), cookie.getValue());
-            newCookie.setPath("/");
+            if (cookie.getPath() != null) {
+                newCookie.setPath(cookie.getPath());
+            }
             newCookie.setDomain(cookieDomain);
             newCookie.setMaxAge(cookie.getMaxAge());
             newCookie.setVersion(cookie.getVersion());
