@@ -231,9 +231,9 @@ public class JmsServiceEngine extends AbstractEngine {
                 con.setClientID(clientId);
             con.start();
 
-            QueueSession session = con.createQueueSession(false, Session.AUTO_ACKNOWLEDGE);
+            session = con.createQueueSession(false, Session.AUTO_ACKNOWLEDGE);
             Queue queue = (Queue) jndi.lookup(queueName);
-            QueueSender sender = session.createSender(queue);
+            sender = session.createSender(queue);
 
             // create/send the message
             Message message = makeMessage(session, modelService, context);

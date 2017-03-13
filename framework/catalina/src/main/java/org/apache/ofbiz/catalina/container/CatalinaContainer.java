@@ -606,9 +606,8 @@ public class CatalinaContainer implements Container {
         Tomcat.initWebappDefaults(context);
         // configure persistent sessions
         // important: the call to context.setManager(...) must be done after Tomcat.initWebappDefaults(...)
-        Property clusterProp = clusterConfig.get(engine.getName());
+        clusterProp = clusterConfig.get(engine.getName());
         if (clusterProp != null && contextIsDistributable) {
-            Manager sessionMgr = null;
             String mgrClassName = ContainerConfig.getPropertyValue(clusterProp, "manager-class", "org.apache.catalina.ha.session.DeltaManager");
             try {
                 sessionMgr = (Manager)Class.forName(mgrClassName).newInstance();
